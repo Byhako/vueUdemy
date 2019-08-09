@@ -37,4 +37,20 @@ adonis make:model Rom --migration
 adonis make:model Movie --migration
 adonis make:model MovieShowing --migration
 
+==========================================
+Instalamos mariaDb
+
+brew install mariadb
+mysql.server start
+mkdir /usr/local/etc/my.cnf.d
+mysql.server start
+
+CREATE USER 'ruben'@'localhost' IDENTIFIED BY '123';
+CREATE DATABASE IF NOT EXISTS cinema;
+GRANT ALL PRIVILEGES ON cinema . * TO 'ruben'@'localhost';
+
+Configurar usuario y password en el archivo .env de la aplicacion adonis.
+
+==========================================
+
 adonis migration:refresh
