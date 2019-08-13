@@ -54,3 +54,5 @@ Configurar usuario y password en el archivo .env de la aplicacion adonis.
 ==========================================
 
 adonis migration:refresh
+
+https://github.com/ME-Studio/mysql-workbench-export-adonisjs-migrations
