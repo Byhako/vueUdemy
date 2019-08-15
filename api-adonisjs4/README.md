@@ -56,3 +56,12 @@ Configurar usuario y password en el archivo .env de la aplicacion adonis.
 adonis migration:refresh
 
 https://github.com/ME-Studio/mysql-workbench-export-adonisjs-migrations
+
+
+Despues de crear los modelos, ejecutamos:
+
+ adonis make:seed
+
+lo cual crea el archivo *DatabaseSeeder*  que nos sirve para llenar con datos nuestra base de datos.
+
+adonis make:controller AuthController

@@ -135,10 +135,10 @@ module.exports = {
     enable: true,
     methods: ['POST', 'PUT', 'DELETE'],
     filterUris: [
-      '/api/v1/login',
-      '/api/v1/register',
-      '/api/v1/booking',
-      '/api/v1/profile'
+      '/api/login',
+      '/api/register',
+      '/api/booking',
+      '/api/profile'
     ],
     cookieOptions: {
       httpOnly: false,

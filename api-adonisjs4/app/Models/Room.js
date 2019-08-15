@@ -2,7 +2,7 @@
 
 const Model = use('Model')
 
-class Customer extends Model {
+class Room extends Model {
   static get createdAtColumn () {
     return null;
   }
@@ -11,9 +11,9 @@ class Customer extends Model {
     return null;
   }
 
-  bookings () {
-    return this.hasMany('App/Models/Booking')
+  movie_showing () {
+    return this.hasMany('App/Models/MovieShowing')
   }
 }
 
-module.exports = Customer
+module.exports = Room
