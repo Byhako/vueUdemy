@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login/Login.vue';
+import store from './store';
+
+// import authTypes from './types/auth';
+// import globalTypes from './types/global';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -12,7 +16,14 @@ export default new Router({
       path: '/',
       name: 'login',
       component: Login,
+      meta: { title: 'Login' },
     },
+    // {
+    //   path: '/bookings',
+    //   name: 'bookings',
+    //   component: Bookings,
+    //   meta: { Auth: true, title: 'Bookings' },
+    // },
     {
       path: '/about',
       name: 'about',
@@ -23,3 +34,14 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  if (to.meta.Auth && !store.state.authModule.logged) {
+    next({ path: '/login' });
+  } else {
+    next();
+  }
+});
+
+export default router;

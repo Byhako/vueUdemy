@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  Nav.navbar.navbar-expand-lg
     a.navbar-brand(href='#') Vue.js
     button.navbar-toggler(
       type='button'
@@ -12,7 +12,7 @@
       span.navbar-toggler-icon
 
     div.collapse.navbar-collapse#navbarSupportedContent
-      ul.navbar-nav
+      ul.navbar-nav.mr-auto
         li.nav-item
           router-link.nav-link(to='/') {{ $t('navigation.cinema') }}
         li.nav-item
@@ -20,7 +20,7 @@
         li.nav-item
           router-link.nav-link(to='/nooking'  v-if='isLogged') {{ $t('navigation.bookings') }}
 
-      ul.navbar-nav.navbar-right
+      ul.navbar-nav
         li.nav-item
           router-link.nav-link(to='/login' v-if='!isLogged') {{ $t('navigation.login') }}
         li.nav-item
@@ -32,9 +32,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import authTypes from '@/types/auth';
+import { Nav } from './styles';
 
 export default {
   name: 'navigation',
+  components: {
+    Nav,
+  },
   methods: {
     ...mapActions({
       _logout: authTypes.actions.logout,

@@ -10,4 +10,6 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Box = styled.div``;
+export const Nav = styled.nav`
+  background-color: #182251;
+`;

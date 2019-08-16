@@ -1,7 +1,6 @@
 <template lang="pug">
   div
-    h1 LOGIN
-    Navigation
+    //- Navigation
 </template>
 
 <script>
