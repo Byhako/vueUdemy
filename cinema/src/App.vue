@@ -1,9 +1,9 @@
 <template lang="pug">
   div#app
-    //- router-view
     Navigation
     div(v-if='processing')
       BlockUI(:message="$t('messages.processing')")
+    router-view
 </template>
 
 <script>

@@ -68,7 +68,20 @@ export default {
       login: authType.actions.login,
     }),
     validateBeforeSubmit() {
-
+      this.$validator.validateAll()
+        .then(result => {
+          if(result) {
+            this.login({
+              email: this.email,
+              password: this.password,
+            })
+              .then(
+                user => this.$router.push('/'),
+                error => { this.error = true }
+              )
+          }
+        })
+        .catch(err => console.log(err));
     },
   },
 };

@@ -13,10 +13,17 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: Login,
-      meta: { title: 'Login' },
+      meta: { Auth: false, title: 'Login' },
+      beforeEnter: (to, from, next) => {
+        if (store.state.authModule.logged) {
+          next({ path: '/' });
+        } else {
+          next();
+        }
+      },
     },
     // {
     //   path: '/bookings',
