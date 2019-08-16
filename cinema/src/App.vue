@@ -7,21 +7,21 @@
 </template>
 
 <script>
-  import globalTypes from './types/global';
-  import { mapGetters } from 'vuex';
-  import Navigation from './components/Navigation/Navigation.vue';
+import { mapGetters } from 'vuex';
+import globalTypes from './types/global';
+import Navigation from './components/Navigation/Navigation.vue';
 
-  export default {
-    name: 'app',
-    components: {
-      Navigation,
-    },
-    computed: {
-      ...mapGetters({
-        processing: globalTypes.getters.processing,
-      }),
-    },
-  };
+export default {
+  name: 'app',
+  components: {
+    Navigation,
+  },
+  computed: {
+    ...mapGetters({
+      processing: globalTypes.getters.processing,
+    }),
+  },
+};
 </script>
 
 <style>
@@ -29,7 +29,7 @@
     background-color: #384389 !important;
   }
   .well {
-    background-color: #fff !important;
+    background-color: #182251 !important;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -47,7 +47,7 @@
     color: rgb(94, 207, 141);
   }
   th, td{
-    color: #E33A2D !important;
+    color: rgb(170, 182, 238) !important;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -56,7 +56,7 @@
     background-color: #fff;
   }
   hr {
-    border: 1px solid #E33A2D !important;
+    border: 1px solid rgb(170, 182, 238) !important;
     width: 100%;
   }
   a.router-link-exact-active {
