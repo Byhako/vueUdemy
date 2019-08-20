@@ -6,6 +6,7 @@ import globalTypes from './types/global';
 import validatorEn from './validator/en';
 import validatorEs from './validator/es';
 import authModule from './modules/auth';
+import cinemaModule from './modules/cinema';
 
 Vue.use(Vuex);
 
@@ -46,5 +47,6 @@ export default new Vuex.Store({
   },
   modules: {
     authModule,
+    cinemaModule,
   },
 });
