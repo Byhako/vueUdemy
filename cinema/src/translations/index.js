@@ -28,7 +28,7 @@ export default {
       title: 'Registrarme en la plataforma',
       email: 'Correo electrónico',
       password: 'Contraseña',
-      password_confirmation: 'Confirma el password',
+      password_confirmation: 'Confirma la contraseña',
       error: 'Error procesando el formulario',
     },
     profile: {

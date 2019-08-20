@@ -28,7 +28,7 @@ const i18n = new VueI18n({
 Vue.use(ClientTable, {}, false, 'bootstrap3', 'default');
 // Vue Resources.  Para hacer peticions http
 Vue.use(VueResource);
-Vue.http.options.root = 'http://127.0.0.1:333/api/';
+Vue.http.options.root = 'http://127.0.0.1:3333/api/';
 Vue.http.interceptors.push((request, next) => {
   request.headers.set('authorization', `Bearer ${window.localStorage.getItem('_token')}`);
   next();

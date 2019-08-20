@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login/Login.vue';
+import Register from './views/Register/Register.vue';
 import store from './store';
 
 // import authTypes from './types/auth';
@@ -25,12 +26,19 @@ const router = new Router({
         }
       },
     },
-    // {
-    //   path: '/bookings',
-    //   name: 'bookings',
-    //   component: Bookings,
-    //   meta: { Auth: true, title: 'Bookings' },
-    // },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
+      meta: { Auth: false, title: 'Register' },
+      beforeEnter: (to, from, next) => {
+        if (store.state.authModule.logged) {
+          next({ path: '/' });
+        } else {
+          next();
+        }
+      },
+    },
     {
       path: '/about',
       name: 'about',

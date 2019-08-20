@@ -30,21 +30,22 @@ export default {
   }
   .well {
     background-color: #182251 !important;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     color: #2c3e50;
   }
-  h1, h3, h4, p {
-    color: #fff !important;
-  }
   h2, a {
     color: rgb(170, 182, 238);
     background-color: transparent;
   }
   a:hover {
-    color: rgb(94, 207, 141);
+    color: #36b52f;
   }
   th, td{
     color: rgb(170, 182, 238) !important;
@@ -61,6 +62,6 @@ export default {
   }
   a.router-link-exact-active {
     background-color: #05050570;
-    border-bottom: 1px solid rgb(94, 207, 141);
+    border-bottom: 1px solid #36b52f;
   }
 </style>

@@ -14,7 +14,7 @@ class AuthController {
     const { user } = request.all()
     const userInstance = new USER()
 
-    userInstance.username = user.email
+    userInstance.username = user.username
     userInstance.email = user.email
     userInstance.password = user.password
 

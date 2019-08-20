@@ -1,6 +1,6 @@
 <template lang="pug">
   Nav.navbar.navbar-expand-lg
-    a.navbar-brand(href='#') Vue.js
+    a.navbar-brand(href='/') Vue.js
     button.navbar-toggler(
       type='button'
       data-toggle='collapse'
@@ -16,7 +16,7 @@
         li.nav-item
           router-link.nav-link(to='/') {{ $t('navigation.cinema') }}
         li.nav-item
-          router-link.nav-link(to='/profile' v-if='isLogged') {{ $t('navigation.my-account') }}
+          router-link.nav-link(to='/profile' v-if='isLogged') {{ $t('navigation.my_account') }}
         li.nav-item
           router-link.nav-link(to='/nooking'  v-if='isLogged') {{ $t('navigation.bookings') }}
 
