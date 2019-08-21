@@ -43,8 +43,5 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log('CINEMA', this.cinema)
-  },
 };
 </script>
