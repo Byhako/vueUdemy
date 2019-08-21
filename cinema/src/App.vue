@@ -40,7 +40,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     color: #2c3e50;
   }
-  h2, a {
+  a {
     color: rgb(170, 182, 238);
     background-color: transparent;
   }
@@ -55,6 +55,9 @@ export default {
   }
   td {
     background-color: #fff;
+  }
+  h2 {
+    line-height: 50px;
   }
   hr {
     border: 1px solid rgb(170, 182, 238) !important;

@@ -1,7 +1,7 @@
 <template lang="pug">
   CinemaItem.col-md-12.col-xs-12
     div.col-md-5.col-xs-12
-      img.img-responsive(:src="cinema.cinema_screenshot")
+      Img(:src="cinema.cinema_screenshot")
     
     div.col-md-7.col-xs-12
       h2
@@ -9,31 +9,42 @@
           :to="{ name: 'cinema', params: { id: cinema.id } }"
         ) {{ $t('cinema.name') }} : {{ cinema.cinema_name }}
 
-      h3 {{ $t('cinema.address') }} : {{ cinema.cinema_address }}
+      H4 {{ $t('cinema.address') }} : &nbsp;
+        span {{ cinema.cinema_address }}
 
-      p {{ $t('cinema.details') }} : {{ cinema.cinema_details }}
+      P {{ $t('cinema.details') }} : &nbsp;
+        span {{ cinema.cinema_details }}
 
-      p {{ $t('cinema.telephone') }} : {{ cinema.cinema_phone }}
+      P {{ $t('cinema.telephone') }} : &nbsp;
+        span {{ cinema.cinema_phone }}
 
-      p {{ $t('cinema.seats') }} : {{ cinema.cinema_seat_capacity }}
+      P {{ $t('cinema.seats') }} : &nbsp;
+        span {{ cinema.cinema_seat_capacity }}
 
-      p {{ $t('cinema.rooms') }} : {{ cinema.__meta__.number_of_rooms }}
+      P {{ $t('cinema.rooms') }} : &nbsp;
+        span {{ cinema.__meta__.number_of_rooms }}
 
 </template>
 
 <script>
-import { CinemaItem } from './styles';
+import { CinemaItem, Img, H4, P } from './styles';
 
 export default {
   name: 'cinemaItem',
   components: {
-    CinemaItems,
+    CinemaItem,
+    Img,
+    H4,
+    P,
   },
   props: {
     cinema: {
       type: Object,
       required: true,
     },
+  },
+  mounted() {
+    console.log('CINEMA', this.cinema)
   },
 };
 </script>

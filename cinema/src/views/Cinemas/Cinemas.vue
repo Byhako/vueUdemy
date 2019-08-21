@@ -2,25 +2,40 @@
   Container
     Title Lista de Cines
 
-    div.col-md-3.col-xs-12 filtros
-    div.col-md-9.col-xs-12 listado
+    Content
+      div.col-md-3.col-xs-12 filtros
+      div.col-md-9.col-xs-12
+        div(v-if="cinemas.length > 0")
+          div(v-for="(cinema, index) in cinemas")
+            CinemaItems(:cinema="cinema" :key="index")
+            div.clearfix
+            hr
+
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import cinemaType from '@/types/cinema';
+import CinemaItems from '@/components/CinemaItem/CinemaItem.vue';
 import {
-  Container, Title,
+  Container, Title, Content,
 } from './styles';
 
 export default {
   name: 'cinemas',
   components: {
+    CinemaItems,
     Title,
     Container,
+    Content,
   },
   mounted() {
     this.$store.dispatch(cinemaType.actions.fetchCinemas)
+  },
+  computed: {
+    ...mapGetters({
+      cinemas: cinemaType.getters.cinemas,
+    })
   },
 };
 </script>

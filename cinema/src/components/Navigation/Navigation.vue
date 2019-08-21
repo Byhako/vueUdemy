@@ -1,6 +1,7 @@
 <template lang="pug">
   Nav.navbar.navbar-expand-lg
-    a.navbar-brand(href='/') Vue.js
+    a.navbar-brand(href='/')
+      Img(:src="logo")
     button.navbar-toggler(
       type='button'
       data-toggle='collapse'
@@ -32,12 +33,19 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import authTypes from '@/types/auth';
-import { Nav } from './styles';
+import { Nav, Img } from './styles';
+import logo from '../../assets/icon.png';
 
 export default {
   name: 'navigation',
   components: {
     Nav,
+    Img,
+  },
+  data() {
+    return {
+      logo: logo,
+    };
   },
   methods: {
     ...mapActions({
