@@ -19,6 +19,8 @@
         option(v-for="seat in [100, 200, 300, 400, 500, 600, 700, 800, 900]" :value="seat") {{ seat }}
       hr
 
+      button.btn.btn-block.btn-info(@click="clearFilter") {{ $t('filter.clear') }}
+
 </template>
 
 <script>

@@ -1,17 +1,17 @@
 <template lang="pug">
-  Container
-    Title Lista de Cines
+  Content
+    div.col-md-3.col-xs-12
+      CinemaFilter
 
-    Content
-      div.col-md-3.col-xs-12
-        CinemaFilter
-
-      div.col-md-9.col-xs-12
-        div(v-if="cinemas.length > 0")
-          div(v-for="(cinema, index) in cinemas")
-            CinemaItems(:cinema="cinema" :key="index")
-            div.clearfix
-            hr
+    div.col-md-9.col-xs-12
+      div(v-if="cinemas.length > 0")
+        div(v-for="(cinema, index) in cinemas")
+          CinemaItems(:cinema="cinema" :key="index")
+          div.clearfix
+          hr
+      
+      div(v-else)
+        div.alert.alert-danger {{ $t('cinema.empty') }}
 
 </template>
 
