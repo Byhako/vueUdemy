@@ -1,9 +1,10 @@
 import styled from 'vue-styled-components';
+import colors from '../../colors';
 
 export const Container = styled.div`
   background-color: gray;
 `;
 
 export const Nav = styled.nav`
-  background-color: #182251;
+  background-color: ${colors.palette.darkBlue};  
 `;
