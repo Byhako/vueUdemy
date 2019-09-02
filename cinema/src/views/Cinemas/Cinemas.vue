@@ -9,7 +9,6 @@
           CinemaItems(:cinema="cinema" :key="index")
           div.clearfix
           hr
-      
       div(v-else)
         div.alert.alert-danger {{ $t('cinema.empty') }}
 
@@ -21,7 +20,7 @@ import cinemaType from '@/types/cinema';
 import CinemaItems from '@/components/CinemaItem/CinemaItem.vue';
 import CinemaFilter from '../../components/CinemaFilter/CinemaFilter.vue';
 import {
-  Container, Title, Content,
+  Container, Content,
 } from './styles';
 
 export default {
@@ -29,17 +28,16 @@ export default {
   components: {
     CinemaItems,
     CinemaFilter,
-    Title,
     Container,
     Content,
   },
   mounted() {
-    this.$store.dispatch(cinemaType.actions.fetchCinemas)
+    this.$store.dispatch(cinemaType.actions.fetchCinemas);
   },
   computed: {
     ...mapGetters({
       cinemas: cinemaType.getters.cinemas,
-    })
+    }),
   },
 };
 </script>

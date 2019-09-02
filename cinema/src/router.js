@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from './views/Login/Login.vue';
 import Register from './views/Register/Register.vue';
 import Cinemas from './views/Cinemas/Cinemas.vue';
+import Movies from './views/Movies/Movies.vue';
 import store from './store';
 
 import authTypes from './types/auth';
@@ -45,6 +46,12 @@ const router = new Router({
       name: 'cinemas',
       component: Cinemas,
       meta: { Auth: false, title: 'Cines' },
+    },
+    {
+      path: '/cinema/:id',
+      name: 'cinema',
+      component: Movies,
+      meta: { Auth: false, title: 'Listado de películas' },
     },
     // {
     //   path: '/about',
